@@ -1,26 +1,24 @@
-import {name,tagline ,resume_link,image} from '../../amit.json'
-import { useThemeContext } from '../../hooks/useThemeContext';
-import Goto from "../icons/Goto";
+import { name, tagline, resume_link, image } from '../../amit.json'
+import { SiGoogledocs } from "react-icons/si";
 const Home = () => {
-  const {theme}=useThemeContext();
   return (
-    <div className="w-full pt-36 sm:pt-28 md:max-w-4xl md:mx-auto px-2 flex sm:flex-row flex-col justify-center" id="home">
-      <div className='sm:w-[300px] w-[250px] text-center mx-auto'>
+    <div className="w-full md:max-w-4xl lg-max-w-6xl md:mx-auto px-2 flex sm:flex-row flex-col justify-center items-center gap-4 my-28" id="home">
+      <div className='aspect-squar sm:w-[300px] text-center mx-auto'>
         <img src={image} alt="profileimage" className="object-contain rounded-lg" />
       </div>
-      <div className='tracking-wider font-bold text-lg text-justify sm:text-left pl-4 flex justify-center flex-col'>
-      <h2 className="sm:text-main text-primary">
+      <div className='tracking-wider font-bold text-lg text-center sm:text-left pl-4 flex justify-center flex-col'>
+        <h2 className="sm:text-main text-primary">
           {" "}
           Hi, I am{" "}
-          <span className={"md:text-main "+`${theme==='dark' ? 'text-white':'text-secondary'}`}>{name}</span> from
+          <span className="md:text-main text-secondary">{name}</span> from
           India 🇮🇳
-          <h4 className="sm:text-xl text-primary mt-2">{tagline}</h4>
+          <p className="sm:text-xl text-primary mt-2">{tagline}</p>
         </h2>
-        <div className='cursor-pointer mt-3 text-center sm:text-left'>
-          <a href={resume_link} target="_blank" className='text-white font-bold bg-button p-1 py-2 rounded-xl' rel='noreferrer'>
-            <Goto />  Resume
+        <div className='cursor-pointer mt-3 text-center'>
+          <a href={resume_link} target="_blank" className='mx-auto sm:mx-0 text-white flex items-center w-fit bg-button p-2 rounded-xl' rel='noreferrer'>
+          <SiGoogledocs className='inline'/>Resume
           </a>
-      </div>
+        </div>
       </div>
     </div>
   );

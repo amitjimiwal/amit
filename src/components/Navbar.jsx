@@ -1,49 +1,69 @@
-import { useState } from "react";
-import { useThemeContext } from "../hooks/useThemeContext";
-import Bars from "./icons/Bars";
-import Close from "./icons/Close";
 import {logo} from '../amit.json';
-let Links = [
-  { name: "Home", link: "/#home" },
-  { name: "About", link: "#about" },
-  { name: "Skills", link: "#skills" },
-  { name: "Project", link: "#project" },
-  { name: "Blogs", link: "#blog" },
-];
+import React, { useState } from 'react';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 const Navbar = () => {
-  const [open, setopen] = useState(false);
-  const { theme } = useThemeContext();
+  // State to manage the navbar's visibility
+  const [nav, setNav] = useState(false);
+
+  // Toggle function to handle the navbar's display
+  const handleNav = () => {
+    setNav(!nav);
+  };
+
+  // Array containing navigation items
+  const navItems = [
+    { id: 1, text: 'Home',link:'/' },
+    { id: 2, text: 'About' ,link:'#about' },
+    { id: 3, text: 'Skills',link:'#skills'  },
+    { id: 4, text: 'Projects',link:'#project'  },
+    { id: 5, text: 'Blogs',link:'#blog'  },
+  ];
+
   return (
-    <section className={"w-full h-20 p-2 flex  justify-between items-center md:justify-around  fixed top-0 z-999 "+`${theme==='dark' ? 'bg-darkmodebackground':'bg-background'}`}>
-      <div className="w-10 m-3">
-        <img src={logo} alt="logo"/>
-      </div> 
-      <div className={"absolute w-full h-auto p-5 top-20 md:static text-center "+`${theme==='dark' ? 'bg-darkmodebackground':'bg-background'}`}>
-        <ul className={"w-full flex flex-col items-center md:flex-row md:justify-center md:items-center"+`${open ? '':' hidden md:flex'}`}>
-      {
-        Links.map((link,index)=> (
-          <li className="text-2xl font-medium m-5 text-primary hover:text-secondary focus:text-secondary" key={index} onClick={()=>{setopen(!open)}}>
-            <a href={link.link}>{link.name}</a>
+    <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
+      {/* Logo */}
+      <h1 className=' w-5 sm:w-12 text-3xl font-bold text-[#00df9a] '><img src={logo} className="object-contain" alt="logo"/></h1>
+      {/* Desktop Navigation */}
+      <ul className='hidden md:flex'>
+        {navItems.map(item => (
+          <li
+            key={item.id}
+            className='p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black text-black'
+          >
+             <a href={item.link}>{item.text}</a>
           </li>
-        ))
-      }
-        </ul>
+        ))}
+      </ul>
+
+      {/* Mobile Navigation Icon */}
+      <div onClick={handleNav} className='block md:hidden'>
+        {nav ? <AiOutlineClose size={20} className='text-black'/> : <AiOutlineMenu size={20} className='text-black' />}
       </div>
-     <div className="flex items-center mr-2">
-     {/* <div onClick={()=>{
-      changeTheme()
-      }} className="w-10 m-3">
-        <div>
-        { theme==='dark' ? <Light />: <Dark/>}
-        </div>
-      </div> */}
-      <div onClick={()=> setopen(!open)} className="md:hidden">
-        <div>
-         {open ? <Close/>: <Bars />}
-        </div>
-      </div>
-     </div>
-    </section>
+
+      {/* Mobile Navigation Menu */}
+      <ul
+        className={
+          nav
+            ? 'fixed md:hidden left-0 top-0 w-[60%] h-full bg-background  ease-in-out duration-500'
+            : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]'
+        }
+      >
+        {/* Mobile Logo */}
+        <h1 className=' w-5 sm:w-12 text-3xl font-bold text-[#00df9a] '><img src={logo} className="object-contain" alt="logo"/></h1>
+
+        {/* Mobile Navigation Items */}
+        {navItems.map(item => (
+          <li
+            key={item.id}
+            className='p-4  rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer  text-black'
+            onClick={handleNav}
+          >
+             <a href={item.link}>{item.text}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
+
 export default Navbar;
