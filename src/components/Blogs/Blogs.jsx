@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const Blogs = ({heading,description,date,readtime,bloglink,topics}) => {
   return (
-    <div className="p-4 rounded-xl bg-project">
+    <div className="p-4 rounded-xl bg-project w-full">
       <div>
             <h1 className="text-2xl font-bold text-secondary">{heading}</h1>
             <p className="text-primary text-sm">{date} .  {readtime}</p>

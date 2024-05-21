@@ -1,8 +1,8 @@
 import Githubsvg from "../../assets/svg/github.svg";
-import Goto from "../icons/Goto";
+import { CiLink } from "react-icons/ci";
 const Project = ({projectname,description,preview,github,live,techstack}) => {
   return (
-    <div className="border-2 rounded-2xl my-3 bg-project border-project">
+    <div className="border-2 rounded-2xl my-3 bg-project border-project transform transition duration-500 hover:scale-110">
       <div className="flex items-center bg-purple-700 p-2 rounded-t-2xl">
         <span className="w-4 h-4 bg-yellow-600 rounded-full mx-2"></span>
         <span className="w-4 h-4 bg-red-600 rounded-full mr-2"></span>
@@ -19,7 +19,7 @@ const Project = ({projectname,description,preview,github,live,techstack}) => {
           >
             <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path>
           </svg>
-          <span className="text-bordercolor">amit.dev</span>
+          <span className="text-bordercolor">notamit.tech</span>
         </div>
       </div>
       <div className="text-center mt-3">
@@ -56,7 +56,7 @@ const Project = ({projectname,description,preview,github,live,techstack}) => {
           <a
             href={github}
             target="_blank"
-            className="font-bold p-1 rounded-xl flex items-center gap-1 text-dark border-2 border-dark"
+            className="font-bold p-1 rounded-xl flex items-center gap-1 "
             rel="noreferrer"
           >
             <img src={Githubsvg} className='text-dark'/>
@@ -67,17 +67,16 @@ const Project = ({projectname,description,preview,github,live,techstack}) => {
           <a
             href={live}
             target="_blank"
-            className="font-bold p-1 rounded-xl flex items-center gap-1 text-dark border-2 border-dark"
+            className="font-bold p-1 rounded-xl flex items-center gap-1"
             rel="noreferrer"
           >
-            <Goto />
-            Link
+            <CiLink />Live
           </a>
         </div>
       </div>
       <div className="w-full text-center my-3">
         {techstack.map((stack,index)=>(
-            <span className="text-sm  font-bold mx-4 bg-blue-400 p-1 rounded-md" key={index}>
+            <span className="text-sm font-bold mx-2" key={index}>
         #{stack}
           </span>
         ))}

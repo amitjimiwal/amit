@@ -17,7 +17,7 @@ function App() {
     }
 },[])
   return (
-    <div className='transition-colors bg-background w-full h-full overflow-hidden'>
+    <div className='transition-colors bg-background w-full h-full overflow-hidden animate-fade-down animate-ease-in'>
     <Navbar/>  
     <Home/>
     <About/>
