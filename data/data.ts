@@ -5,16 +5,16 @@ export const Data = {
   image: '/pfp/profile.jpg',
   tagline: "Software engineer driven by learning and challenges.",
   nickname: "notamit",
-  about: "I'm Amit, a Full Stack Engineer who's all about turning wild ideas into web apps. Always eager to learn , grow and solve problems. I'm final year CSE undergrad from MSIT , New Delhi. I'm always looking for opportunities to collaborate on exciting projects, so feel free to reach out!",
+  about: "I'm Amit, a **Full Stack Engineer** who's all about turning wild ideas into web apps. Always eager to learn , grow and solve problems. I'm final year CSE undergrad from **MSIT , New Delhi**. I'm always looking for opportunities to collaborate on exciting projects, so **feel free to reach out!**",
+  resume_link: "https://drive.google.com/file/d/1HTRaexEzZmMkPJagUzh9YNK-wB8ZOkXu/view?usp=sharing",
+  cal: 'https://cal.com/amit-jimiwal/30min',
   contact: {
-    email: "amitjimiwal45@gmail.com",
+    email: "mailto:amitjimiwal45@gmail.com",
     github: "https://github.com/amitjimiwal",
     twitter: "https://twitter.com/notamit_dev",
     medium: "https://medium.com/@amitjimiwal",
     linkedin: "https://www.linkedin.com/in/amitjimiwal/",
-    resume_link: "https://drive.google.com/file/d/1HTRaexEzZmMkPJagUzh9YNK-wB8ZOkXu/view?usp=sharing",
     instagram: "https://www.instagram.com/_amit.jimiwal_/",
-    cal: 'https://cal.com/amit-jimiwal/30min'
   },
   skills: [
     { category: "languages", items: ["JavaScript", "Java", "TypeScript", "C++"] },

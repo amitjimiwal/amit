@@ -55,7 +55,7 @@ export const BlogCard = ({ blog }: { blog: (typeof Data.blogs)[0] }) => {
           <CardHeader className="p-0">
             <div className="flex items-center justify-between gap-x-1 text-base">
               <h3 className="inline-flex items-center  justify-center font-semibold  leading-none text-xs sm:text-sm">
-                {blog.title}
+               {blog.title.toLowerCase()}
                 {blog.topics && (
                   <span className="hidden md:inline-flex gap-x-1">
                     {blog.topics.map((badge, index) => (
@@ -64,7 +64,7 @@ export const BlogCard = ({ blog }: { blog: (typeof Data.blogs)[0] }) => {
                         className="align-middle md:ml-2 text-xs"
                         key={index}
                       >
-                        {badge}
+                        {badge.toLowerCase()}
                       </Badge>
                     ))}
                   </span>
@@ -72,13 +72,13 @@ export const BlogCard = ({ blog }: { blog: (typeof Data.blogs)[0] }) => {
                 <ChevronRightIcon className="size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100" />
               </h3>
               <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">
-                {blog.postDate}
+                {blog.postDate.toLowerCase()}
               </div>
             </div>
             <div className="font-sans text-xs">{blog.readTime}</div>
           </CardHeader>
           <CardContent className="p-0 mt-1 md:mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-300">
-            {blog.description}
+            {blog.description.toLowerCase()}
           </CardContent>
         </div>
       </Card>

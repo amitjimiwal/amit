@@ -2,6 +2,7 @@ import BlurFade from "@/components/magicui/blur-fade";
 import { Data } from "@/data/data";
 import Image from "next/image";
 import WordRotate from "@/components/magicui/word-rotate";
+import { LinkTo } from "./opportunity";
 export function Header() {
   return (
     <BlurFade>
@@ -33,6 +34,13 @@ export function Header() {
             />
           </BlurFade>
         </div>
+      </div>
+      <div className="flex gap-5 justify-end mt-5">
+        {Object.keys(Data.contact).map((social, index) => (
+          <BlurFade key={index} delay={0.25 * (index + 4)} inView>
+            <LinkTo href={Data.contact[social as keyof typeof Data.contact] || "#"} text={social} />
+          </BlurFade>
+        ))}
       </div>
     </BlurFade>
   );

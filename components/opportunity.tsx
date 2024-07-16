@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -8,12 +8,12 @@ const Resume = () => {
   return (
     <div className=" bg-blue-200 text-center py-2 rounded-xl mx-9 my-10">
       <p className="text-red-950 text-sm hidden sm:block">
-        i&apos;m currently looking for internship/fulltime opportunities in{" "}
+        i&apos;m currently open for internship/fulltime opportunities in{" "}
         <span className="font-extrabold text-black ">sde/fullstack</span> roles
       </p>
       <div className="flex items-center gap-6 justify-center">
-        <LinkTo href={Data.contact.cal} text="schedule a meeting/cal.com" />
-        <LinkTo href={Data.contact.resume_link} text="resume" />
+        <LinkTo href={Data.cal} text="schedule a meeting/cal.com" />
+        <LinkTo href={Data.resume_link} text="resume" />
       </div>
     </div>
   );
