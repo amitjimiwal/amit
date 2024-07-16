@@ -29,8 +29,6 @@ export function Header() {
               words={[
                 "Software Engineer".toLowerCase(),
                 "Full Stack Engineer".toLowerCase(),
-                "Software Engineer".toLowerCase(),
-                "Full Stack Engineer".toLowerCase(),
               ]}
             />
           </BlurFade>

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { SkillIcons } from "./icons";
+import SkillIcons from "./icons";
 import BlurFade from "./magicui/blur-fade";
 import { useRouter } from "next/navigation";
 const Copywrite = () => {

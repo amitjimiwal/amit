@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function Layout({ children }: TLayout) {
   return (
     <html lang="en" className="h-full">
-      <body className={cn(inter.className, "h-full w-full dark:bg-black bg-white")}>
+      <body className={cn(inter.className, "h-full w-full dark:bg-black")}>
         <div className="flex flex-col items-center sm:max-w-4xl mx-auto">
           {children}
         </div>
