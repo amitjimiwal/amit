@@ -1,74 +1,69 @@
+"use client";
 import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
-import { Button } from "./ui/button";
-import { Github, Link as LinkIcon } from "lucide-react";
-import Link from "next/link";
-import { Badge } from "./ui/badge";
-
-const projects = [
-  {
-    title: "Appie Family",
-    description:
-      "Shared grocery list app for households. Let your family add items to the list and see them in real-time.",
-    image:
-      "https://source.unsplash.com/a-mother-unpacking-local-food-in-zero-waste-packaging-from-bag-with-help-of-daughter-in-kitchen-at-home-mG9ACs8XFTE",
-    website: "https://appie.joeribreedveld.com/",
-    github: "https://github.com/joeribreedveld/appie-family2",
-    visibility: "private",
-  },
-  {
-    title: "Martial Arts Amsterdam",
-    description:
-      "An online platform for discovering and promoting martial arts dojos and workshops in Amsterdam.",
-    image:
-      "https://source.unsplash.com/boy-doing-karate-routines-during-golden-hour-igLzPKOvZNw",
-    website: "https://martialartsamsterdam.com/",
-    github: "https://github.com/joeribreedveld/martial-arts-amsterdam",
-    visibility: "private",
-  },
-  {
-    title: "Hair Calendar",
-    description:
-      "Track your hair wash days and adjust your hair routine based on a personalized calendar.",
-    image:
-      "https://source.unsplash.com/a-woman-getting-her-hair-cut-by-a-hair-stylist-Md_DhaFsnCQ",
-    website: "https://haircalendar.vercel.app",
-    github: "https://github.com/joeribreedveld/hair-calendar",
-    visibility: "public",
-  },
-];
-
+import { motion } from "framer-motion";
+import { Data } from "@/data/data";
+import Markdown from "react-markdown";
+import { Stack } from "./technologies";
+import Heading from "./Heading";
+import { LinkTo } from "./opportunity";
 export default function Projects() {
   return (
     <section className="mx-auto md:grid-cols-2 grid lg:grid-cols-3 w-full gap-4 md:pb-8 lg:pb-20">
-      {projects.map((project, index) => (
-        <Card key={index} className="w-full flex flex-col justify-between">
-          <CardHeader>
-            <CardTitle>{project.title}</CardTitle>
-            <CardDescription>{project.description}</CardDescription>
-            <div>
-              <Badge variant="secondary" className="w-fit capitalize mt-2">
-                {project.visibility}
-              </Badge>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <Image
-              src={project.image}
-              alt="Project"
-              width={128}
-              height={128}
-              className="rounded-lg w-full aspect-[3/2] object-cover"
-            />
-          </CardContent>
-        </Card>
+      <Heading className="text-xl font-bold mb-4 row-span-3 pt-5">
+        projects
+      </Heading>
+      {Data.projects.map((project, index) => (
+        <ProjectCard key={index} project={project} />
       ))}
     </section>
+  );
+}
+
+function ProjectCard({ project }: { project: (typeof Data.projects)[0] }) {
+  return (
+    <motion.div
+    style={{
+      aspectRatio: "16/9",
+    }}
+      whileHover={{
+        scale: 1.05,
+      }}
+      transition={{ duration: 0.3 }}
+    >
+      <Card className="w-full flex flex-col justify-between aspect-square">
+        <CardHeader>
+          <CardTitle>{project.name}</CardTitle>
+          <Markdown className="text-slate-500 dark:text-slate-300 prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
+            {project.description}
+          </Markdown>
+          <div>
+            {project.techStack.map((tech, index) => (
+              <Stack key={index} stack={tech} />
+            ))}
+          </div>
+        </CardHeader>
+        <CardContent>
+          <Image
+            src={project.previewImage}
+            alt="Project"
+            width={128}
+            height={128}
+            className="rounded-lg w-full aspect-[3/2] object-cover"
+          />
+        </CardContent>
+        <CardFooter className="px-2 pb-2 flex gap-5 justify-center">
+          <LinkTo href={project.links.github_repo} text="github" />
+          <LinkTo href={project.links.live_link} text="live" />
+        </CardFooter>
+      </Card>
+    </motion.div>
   );
 }

@@ -1,6 +1,5 @@
 import IconCloud from "@/components/magicui/icon-cloud";
 import Heading from "./Heading";
-import SVGIcons from "./icons";
 
 const stacks = [
   "typescript",
@@ -24,8 +23,8 @@ const stacks = [
   "git",
   "github",
   "gitlab",
-  "visualstudiocode",
   "figma",
+  "visualstudiocode",
   "nestjs",
 ];
 
@@ -33,19 +32,22 @@ export function TechStack() {
   return (
     <div className="w-full">
       <Heading className="text-xl font-bold mb-4">tech-stack</Heading>
-      <div className="text-left">
+      <div className="text-justify">
         {stacks.map((stack, index) => (
-          <div
-            key={index}
-            className="inline-block px-3 py-1 text-xs font-semibold bg-primary text-background rounded-md mr-2 mb-2 cursor-context-menu"
-          >
-            {stack.includes("dot") ? stack.replace("dot", ".") : stack}
-          </div>
+          <Stack key={index} stack={stack} />
         ))}
       </div>
       <div className="relative flex h-full w-full max-w-[32rem] items-center justify-center overflow-hidden rounded-lg bg-background px-20 pb-20 pt-8 text-center">
         <IconCloud iconSlugs={stacks} />
       </div>
+    </div>
+  );
+}
+
+export function Stack({ stack }: { stack: string }) {
+  return (
+    <div className="inline-block px-3 py-1 text-xs font-semibold bg-blue-400 text-background rounded-md mr-2 mb-2 cursor-context-menu">
+      {stack.includes("dot") ? stack.replace("dot", ".") : stack}
     </div>
   );
 }

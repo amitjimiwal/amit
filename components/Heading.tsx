@@ -11,7 +11,7 @@ const Heading = ({
   return (
     <h1
       className={cn(
-        "text-xl font-bold tracking-tighter sm:text-2xl xl:text-2xl/none text-black dark:text-white",
+        "text-xl font-bold tracking-tighter sm:text-2xl xl:text-2xl/none text-black dark:text-white cursor-pointer",
         className,
       )}
     >

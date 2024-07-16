@@ -14,7 +14,7 @@ export const Data = {
     linkedin: "https://www.linkedin.com/in/amitjimiwal/",
     resume_link: "https://drive.google.com/file/d/1HTRaexEzZmMkPJagUzh9YNK-wB8ZOkXu/view?usp=sharing",
     instagram: "https://www.instagram.com/_amit.jimiwal_/",
-    cal:'https://cal.com/amit-jimiwal/30min'
+    cal: 'https://cal.com/amit-jimiwal/30min'
   },
   skills: [
     { category: "languages", items: ["JavaScript", "Java", "TypeScript", "C++"] },
@@ -28,7 +28,7 @@ export const Data = {
       period: { start: "August 2023", end: "September 2023" },
       description: "Worked in building Examin8 UI in reactjs, optimizing the web application's performance and user experience. Collaborating with the development team to refactor and implement modern React components.",
       url: "https://mycbseguide.com",
-      logo:'/work/cbseguide.png'
+      logo: '/work/cbseguide.png'
     },
     {
       title: "FrontEnd Developer",
@@ -36,7 +36,7 @@ export const Data = {
       period: { start: "May 2023", end: "July 2023" },
       description: "Designed and implemented Doubtless app's website using ReactJs, enhancing user experience and navigation worked with firebase , focusing on backend driven UI.",
       url: "https://www.linkedin.com/company/doubtless46/posts/?feedView=all",
-      logo:'/work/doubtless.jpeg'
+      logo: '/work/doubtless.jpeg'
     }
   ],
   projects: [
@@ -49,8 +49,42 @@ export const Data = {
         live_link: "https://typesight.vercel.app/"
       },
       techStack: ["React", "Express", "Mediapipe", "OpenCV"]
-    }
-    // Add other projects similarly...
+    }, {
+      name: "ReadLogs",
+      previewImage: "https://res.cloudinary.com/dejzy9q65/image/upload/v1707657594/Screenshot_2024-02-11_at_6.48.03_PM_b0ulxs.png",
+      description: "Efficiently Manage Your Reads and Docs",
+      links: {
+        github_repo: "https://github.com/amitjimiwal/ReadLogs",
+        live_link: "https://readlogs.vercel.app/",
+      },
+      techStack: [
+        "React", "Appwrite", "TypeScript"
+      ]
+    },
+    {
+      name: "Github-Wrapped",
+      previewImage: "https://res.cloudinary.com/dejzy9q65/image/upload/v1702742821/Screenshot_2023-12-16_at_9.35.54_PM_r3eyfj.png",
+      description: "Get Your Github Year Recap 🎉",
+      links: {
+        github_repo: "https://github.com/amitjimiwal/Github-Wrapped",
+        live_link: "https://github-wrapped-three.vercel.app/",
+      },
+      techStack: [
+        "Next", "ApolloClient", "TypeScript"
+      ]
+    },
+    {
+      name: "HealthCare_Web",
+      previewImage: "https://res.cloudinary.com/dejzy9q65/image/upload/v1690118877/healthcare_rxsbtd.jpg",
+      description: "A virtual AI-based assistant that displays the user's health status using lab reports. It also consists of an AI-based chatbot that is useful for people to ask queries.",
+      links:{
+        github_repo: "https://github.com/amitjimiwal/HealthCare-web",
+        live_link: "https://health-care-web-umfn-alz6bffc4-access-denied69.vercel.app/",
+      },
+      techStack: [
+        "MERN STACK", "AI-ML"
+      ]
+    },
   ],
   blogs: [
     {
@@ -61,6 +95,5 @@ export const Data = {
       link: "https://amplified-stem-180.notion.site/Git-CheatSheet-d4a0affaf455420ba343b6c9bde91abe",
       topics: ["Git", "Github"]
     }
-    // Add other blogs similarly...
   ]
 };

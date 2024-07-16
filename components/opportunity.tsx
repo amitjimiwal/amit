@@ -1,5 +1,6 @@
+'use client';
 import React from "react";
-import Text from "./Text";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { Data } from "@/data/data";
 import { ArrowUpRight } from "lucide-react";
@@ -20,11 +21,21 @@ const Resume = () => {
 
 export default Resume;
 
-function LinkTo({ href, text }: { href: string; text: string }) {
+export function LinkTo({ href, text }: { href: string; text: string }) {
   return (
-    <Link href={href} className="text-sm text-black hover:text-red-700 hover:scale-105 transition-transform duration-75">
-      <ArrowUpRight className="inline text-sm" size={20} />
-      {text}
-    </Link>
+    <motion.div
+      whileHover={{
+        scale: 1.05,
+      }}
+      transition={{ duration: 0.3 }}
+    >
+      <Link
+        href={href}
+        className="text-sm text-black hover:text-red-700 hover:scale-105 transition-transform duration-75"
+      >
+        <ArrowUpRight className="inline text-sm" size={20} />
+        {text}
+      </Link>
+    </motion.div>
   );
 }

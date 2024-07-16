@@ -5,6 +5,7 @@ import Resume from "@/components/opportunity";
 import Copywrite from "@/components/copywrite";
 import WorkExperience from "@/components/workexperience";
 import { TechStack } from "@/components/technologies";
+import Projects from "@/components/projects";
 export default function Page() {
   return (
     <main className="px-4 flex flex-col md:container">
@@ -14,6 +15,7 @@ export default function Page() {
         <Resume />
         <WorkExperience />
         <TechStack />
+        <Projects />
         <Copywrite />
       </BlurFade>
     </main>
