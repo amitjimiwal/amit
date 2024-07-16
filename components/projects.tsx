@@ -14,23 +14,29 @@ import Markdown from "react-markdown";
 import { Stack } from "./technologies";
 import Heading from "./Heading";
 import { LinkTo } from "./opportunity";
+import BlurFade from "./magicui/blur-fade";
 export default function Projects() {
   return (
     <>
-      <section className="mx-auto md:grid-cols-2 grid lg:grid-cols-3 w-full gap-4 md:pb-2 lg:pb-2">
-        <Heading className="text-xl font-bold mb-4 row-span-2 pt-5">
-          featured <br />
-          projects
-        </Heading>
-        {Data.projects.slice(0, 2).map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
-      </section>
-      <LinkTo href="/projects" text="view all projects" />
+      <BlurFade inView>
+        <section className="mx-auto md:grid-cols-2 grid lg:grid-cols-3 w-full gap-4 md:pb-2 lg:pb-2">
+          <Heading className="text-xl font-bold mb-4 row-span-2 pt-5">
+            featured <br />
+            projects
+          </Heading>
+          {Data.projects.slice(0, 2).map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </section>
+        <LinkTo
+          href="/projects"
+          text="view all projects"
+          className="sm:text-left text-center"
+        />
+      </BlurFade>
     </>
   );
 }
-
 export function ProjectCard({
   project,
 }: {
@@ -39,7 +45,6 @@ export function ProjectCard({
   return (
     <motion.div
       style={{
-        aspectRatio: "16/9",
         cursor: "context-menu",
       }}
       whileHover={{

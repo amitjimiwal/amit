@@ -35,10 +35,10 @@ export function Header() {
           </BlurFade>
         </div>
       </div>
-      <div className="flex gap-5 justify-end mt-5">
+      <div className="flex gap-5 sm:justify-end mt-5 flex-wrap sm:flex-nowrap justify-center">
         {Object.keys(Data.contact).map((social, index) => (
           <BlurFade key={index} delay={0.25 * (index + 4)} inView>
-            <LinkTo href={Data.contact[social as keyof typeof Data.contact] || "#"} text={social} />
+            <LinkTo href={Data.contact[social as keyof typeof Data.contact] || "#"} text={social} className="text-sm" />
           </BlurFade>
         ))}
       </div>

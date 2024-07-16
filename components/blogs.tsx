@@ -7,29 +7,22 @@ import { Card, CardContent, CardHeader } from "./ui/card";
 import Heading from "./Heading";
 import { Data } from "@/data/data";
 import { LinkTo } from "./opportunity";
+import BlurFade from "./magicui/blur-fade";
 
-interface BlogCardProps {
-  logoUrl: string;
-  altText: string;
-  title: string;
-  subtitle?: string;
-  badges?: readonly string[];
-  href?: string;
-  desc?: string;
-  period?: string;
-}
 const Blogs = () => {
   return (
     <div className="mb-10">
-      <section className="mx-auto my-5">
-        <Heading className="text-xl font-bold mb-4 row-span-2 pt-5">
-          blogs
-        </Heading>
-        {Data.blogs.slice(0, 2).map((blog, index) => (
-          <BlogCard key={index} blog={blog} />
-        ))}
-      </section>
-      <LinkTo href="/blogs" text="view all blogs" />
+      <BlurFade inView>
+        <section className="mx-auto my-5">
+          <Heading className="text-xl font-bold mb-4 row-span-2 pt-5">
+            blogs
+          </Heading>
+          {Data.blogs.slice(0, 2).map((blog, index) => (
+            <BlogCard key={index} blog={blog} />
+          ))}
+        </section>
+        <LinkTo href="/blogs" text="view all blogs" />
+      </BlurFade>
     </div>
   );
 };
@@ -55,7 +48,7 @@ export const BlogCard = ({ blog }: { blog: (typeof Data.blogs)[0] }) => {
           <CardHeader className="p-0">
             <div className="flex items-center justify-between gap-x-1 text-base">
               <h3 className="inline-flex items-center  justify-center font-semibold  leading-none text-xs sm:text-sm">
-               {blog.title.toLowerCase()}
+                {blog.title.toLowerCase()}
                 {blog.topics && (
                   <span className="hidden md:inline-flex gap-x-1">
                     {blog.topics.map((badge, index) => (

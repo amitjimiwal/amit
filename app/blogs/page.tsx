@@ -17,12 +17,12 @@ const page = () => {
         <ArrowLeft size={18} /> go back
       </Link>
       <BlurFade delay={0.2}>
-        <Heading className="text-xl font-bold mb-4 row-span-2 pt-5">
+        <Heading className="text-xl font-bold mb-4 row-span-2 pt-5  px-2">
           blogs
         </Heading>
       </BlurFade>
       <BlurFade delay={0.25}>
-        <section className="space-y-5">
+        <section className="space-y-5  px-2">
           {Data.blogs.map((blog, index) => (
             <BlogCard key={index} blog={blog} />
           ))}

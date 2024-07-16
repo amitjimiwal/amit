@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Data } from "@/data/data";
 import { ArrowUpRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 const Resume = () => {
   return (
     <div className=" bg-blue-200 text-center py-2 rounded-xl mx-9 my-10">
@@ -21,7 +22,15 @@ const Resume = () => {
 
 export default Resume;
 
-export function LinkTo({ href, text }: { href: string; text: string }) {
+export function LinkTo({
+  href,
+  text,
+  className,
+}: {
+  href: string;
+  text: string;
+  className?: string;
+}) {
   return (
     <motion.div
       whileHover={{
@@ -31,7 +40,10 @@ export function LinkTo({ href, text }: { href: string; text: string }) {
     >
       <Link
         href={href}
-        className="text-sm text-black hover:text-red-700 hover:scale-105 transition-transform duration-75"
+        className={cn(
+          "text-sm text-black hover:text-red-700 hover:scale-105 transition-transform duration-75",
+          className,
+        )}
       >
         <ArrowUpRight className="inline text-sm" size={20} />
         {text}
