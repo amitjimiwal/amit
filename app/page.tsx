@@ -6,6 +6,7 @@ import Copywrite from "@/components/copywrite";
 import WorkExperience from "@/components/workexperience";
 import { TechStack } from "@/components/technologies";
 import Projects from "@/components/projects";
+import Blogs from "@/components/blogs";
 export default function Page() {
   return (
     <main className="px-4 flex flex-col md:container">
@@ -15,6 +16,7 @@ export default function Page() {
         <Resume />
         <WorkExperience />
         <TechStack />
+        <Blogs />
         <Projects />
         <Copywrite />
       </BlurFade>
