@@ -27,6 +27,9 @@ const stacks = [
   "figma",
   "visualstudiocode",
   "nestjs",
+  "c#",
+  ".net",
+  "angular"
 ];
 
 export function TechStack() {

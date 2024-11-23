@@ -17,11 +17,19 @@ export const Data = {
     instagram: "https://www.instagram.com/_amit.jimiwal_/",
   },
   skills: [
-    { category: "languages", items: ["JavaScript", "Java", "TypeScript", "C++"] },
-    { category: "tools", items: ["REACT", "NODEJS", "EXPRESS", "Firebase", "Github", "Git", "PostMan", "Redux", "MongoDB", "PostGreSQL", "NestJS"] },
-    { category: "platform", items: ["Vercel", "Netlify"] }
+    { category: "languages", items: ["JavaScript", "Java", "TypeScript","C#",".NET"] },
+    { category: "tools", items: ["REACT", "NODEJS", "EXPRESS", "Firebase", "Github", "Git", "PostMan", "Redux", "MongoDB", "PostGreSQL", "NestJS","Angular"] },
+    { category: "platform", items: ["Vercel", "Netlify","AWS"] }
   ],
   experience: [
+    {
+      title: "Software Engineer Intern",
+      company: "Veersa Technologies",
+      period: { start: "August 2024", end: "Present" },
+      description: "Working in building internal HR tool to evaluate employee performance and feeback system",
+      url: "https://veersatech.com/",
+      logo: '/work/veersa.png'
+    },
     {
       title: "Full Stack Developer",
       company: "myCBSEguide",
