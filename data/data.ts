@@ -120,6 +120,15 @@ export const Data = {
   ],
   blogs: [
     {
+      title: "thisValue in array methods",
+      logoUrl: '/images/javascript.png',
+      description: "Learn how to make use of thisValue in various array methods of Javascript",
+      postDate: "November 23 2024",
+      readTime: "2 min read",
+      link: "https://amitjimiwal.medium.com/thisvalue-in-javascript-array-method-a578cb8b46d8",
+      topics: ["Javascript", "Coding Practice"]
+    },
+    {
       title: "Git Sheet",
       logoUrl: '/images/git.png',
       description: "Git Commands and workflow for beginners",
