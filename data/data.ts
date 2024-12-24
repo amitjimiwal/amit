@@ -49,6 +49,15 @@ export const Data = {
   ],
   projects: [
     {
+      name: "2024 Season Of Code",
+      previewImage: "https://res.cloudinary.com/dejzy9q65/image/upload/v1734882716/og_nhu4fu.png",
+      description: "your github wrapped for 2024 season 🚀📈",
+      links: {
+        github_repo: "https://github.com/amitjimiwal/githubwrapped",
+        live_link: "https://wrappedcode.vercel.app/"
+      },
+      techStack: ["Nextjs", "Typescript"]
+    },{
       name: "TypeSight",
       previewImage: "https://res.cloudinary.com/dejzy9q65/image/upload/v1715883883/Screenshot_Capture_-_2024-05-16_-_23-53-55_vl3tyg.png",
       description: "Improve your typing skills with our cutting-edge typing test featuring real-time eye movement detection.",
@@ -58,6 +67,15 @@ export const Data = {
       },
       techStack: ["React", "Express", "Mediapipe", "OpenCV", "websockets"]
     }, {
+      name: "Hubspy-npm package",
+      previewImage: "https://miro.medium.com/v2/resize:fit:970/1*ZL0hrfDvxH8ZpmQ1FqI0Jg.jpeg",
+      description: "Hubspy is a npm package that helps you to get the data of commits, repositories,etc on a user's public github account.",
+      links: {
+        github_repo: "https://github.com/amitjimiwal/HubSpy",
+        live_link: "https://www.npmjs.com/package/hubspy"
+      },
+      techStack: ["npm", "Typescript","cheerio"]
+    },{
       name: "ReadLogs",
       previewImage: "https://res.cloudinary.com/dejzy9q65/image/upload/v1707657594/Screenshot_2024-02-11_at_6.48.03_PM_b0ulxs.png",
       description: "Efficiently Manage Your **Reads and Docs**. Get Daily reminders to read your docs.",
