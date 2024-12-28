@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "https://res.cloudinary.com/dejzy9q65/image/upload/v1710347316/sdsd_hrjhbt.jpg",
+        url: "https://res.cloudinary.com/dejzy9q65/image/upload/v1735397274/The_Good_Life_GoDaddy_Store_Image_3_kkhyvx.png",
         width: 800,
         height: 600,
         alt: "Amit Jimiwal",
